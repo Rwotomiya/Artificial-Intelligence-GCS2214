@@ -1,3 +1,5 @@
+import random
+
 def minimax(board, depth, is_maximizing):
     """
     Minimax algorithm to determine the best move for the AI.
@@ -120,7 +122,8 @@ def main():
     Main function to run the two-player game.
     """
     board = [" "] * 9
-    current_player = "X"  # AI is 'X', User is 'O'
+    current_player = random.choice(["X", "O"])  # Randomly choose who starts
+    print(f"{'AI' if current_player == 'X' else 'You'} will start the game.")
 
     while True:
         print_board(board)
